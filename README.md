@@ -1,4 +1,4 @@
-Bem-vindo ao Alura Space, um emocionante projeto em Django que te leva em uma jornada pelo cativante universo do espaço sideral e suas curiosidades surpreendentes. 🚀🌌
+Bem-vindo ao Enter Space, um emocionante projeto em Django que te leva em uma jornada pelo cativante universo do espaço sideral e suas curiosidades surpreendentes. 🚀🌌
 
 Sobre o Projeto
 Enter Space é uma aplicação web dedicada a compartilhar fatos impressionantes, imagens deslumbrantes e histórias intrigantes sobre o cosmos. Seja você um entusiasta do espaço ou apenas curioso sobre o universo, essa plataforma saciará sua sede por conhecimento cósmico.

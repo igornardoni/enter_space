@@ -24,7 +24,7 @@
                 <ul class="cards__lista">
                     {% if cards %}
                     {% for fotografia in cards %}
-                    <li class="card" style="background-color: #041833;>
+                    <li class="card" style="background-color: #041833;">
                         <a href="{% url 'imagem' fotografia.id %}">
                             {% if fotografia.foto == "" or fotografia.foto == null %}
                             <img class="card__imagem" src="{% static '/assets/images/gallery_img/not_found.png'%}" alt="foto">
@@ -60,4 +60,3 @@
 </div>
 
 {% endblock %}
-

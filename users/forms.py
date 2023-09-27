@@ -19,8 +19,8 @@ class LoginForm(forms.Form):
     )
 
 class RegisterForm(forms.Form):
-    nome_completo = forms.CharField(
-        label="Nome completo",
+    nome_cadastro = forms.CharField(
+        label="Nome de cadastro",
         required=True,
         max_length=100,
         widget=forms.TextInput(
@@ -54,4 +54,14 @@ class RegisterForm(forms.Form):
             attrs={"class": "form-control", "placeholder": "Digite sua senha mais uma vez"}
         )
     )
+
+    def clean_nome_cadastro(self):
+        nome = self.cleaned_data.get("nome_cadastro")
+        if nome:
+            nome = nome.strip()
+            if " " in nome:
+                raise forms.ValidationError("Espaços não são permitidos nesse campo!")
+            else:
+                return nome
+
 

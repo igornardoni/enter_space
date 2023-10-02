@@ -109,10 +109,10 @@ USE_TZ = True
 
 # AWS Settings
 
-AWS_ACCESS_KEY_ID = str(os.getenv('AKIA3XKLMZN3KTJIZQG5'))
-AWS_SECRET_ACCESS_KEY = str(os.getenv('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'))
-AWS_STORAGE_BUCKET_NAME = str(os.getenv('enter-space-images'))
-AWS_S3_CUSTOM_DOMAIN = 'enter-space-images.s3.sa-east-1.amazonaws.com'
+AWS_ACCESS_KEY_ID = str(os.getenv('AWS_ACCESS_KEY_ID'))
+AWS_SECRET_ACCESS_KEY = str(os.getenv('AWS_SECRET_ACCESS_KEY'))
+AWS_STORAGE_BUCKET_NAME = str(os.getenv('AWS_STORAGE_BUCKET_NAME'))
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.sa-east-1.amazonaws.com'
 AWS_DEFAULT_ACL = 'public-read'
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400'
@@ -127,17 +127,17 @@ STORAGES = {
     "default": {
         "BACKEND": "storages.backends.s3.S3Storage",
         "OPTIONS": {
-            "access_key": 'AKIA3XKLMZN3KTJIZQG5',
-            "secret_key": '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',
-            "bucket_name": 'enter-space-images'
+            "access_key": str(os.getenv('AWS_ACCESS_KEY_ID')),
+            "secret_key": str(os.getenv('AWS_SECRET_ACCESS_KEY')),
+            "bucket_name": str(os.getenv('AWS_STORAGE_BUCKET_NAME'))
         },
     },
     "staticfiles": {
         "BACKEND": "storages.backends.s3.S3Storage",
         "OPTIONS": {
-            "access_key": 'AKIA3XKLMZN3KTJIZQG5',
-            "secret_key": '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',
-            "bucket_name": 'enter-space-images'
+            "access_key": str(os.getenv('AWS_ACCESS_KEY_ID')),
+            "secret_key": str(os.getenv('AWS_SECRET_ACCESS_KEY')),
+            "bucket_name": str(os.getenv('AWS_STORAGE_BUCKET_NAME'))
         },
     },
 }

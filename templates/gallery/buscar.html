@@ -1,10 +1,10 @@
-{% extends 'gallery/base.html' %}
+{% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
 
     <section class="conteudo">
         <section class="banner">
-            <img class="banner__imagem" src="{% static '/assets/images/Banner(2).png' %}" alt="banner Enter Space">
+            <img class="banner__imagem" src="{% static 'assets/images/Banner(2).png' %}" alt="banner Enter Space">
             <h1 class="banner__titulo"> A galeria mais completa de fotos do espaço!</h1>
         </section>
         <section class="tags">
@@ -23,10 +23,10 @@
                 <ul class="cards__lista">
                     {% if cards %}
                     {% for fotografia in cards %}
-                    <li class="card">
+                    <li class="card" style="background-color: #041833;">
                         <a href="{% url 'imagem' fotografia.id %}">
                             {% if fotografia.foto == "" or fotografia.foto == null %}
-                            <img class="card__imagem" src="{% static '/assets/images/gallery_img/not_found.png'%}" alt="foto">
+                            <img class="card__imagem" src="{% static 'assets/images/gallery_img/not_found.png'%}" alt="foto">
                             {% else %}
                                 <img class="card__imagem" src="{{fotografia.foto.url}}" alt="foto">
                             {% endif %}
@@ -38,7 +38,7 @@
                             <div class="card__texto">
                                 <p class="card__descricao">{{ fotografia.legenda }}</p>
                                 <span>
-                                    <img src="{% static '/assets/icons/1x/favorite_outline.png' %}" alt="ícone de coração">
+                                    <img src="{% static 'assets/icons/1x/favorite_outline.png' %}" alt="ícone de coração">
                                 </span>
                             </div>
                         </div>
